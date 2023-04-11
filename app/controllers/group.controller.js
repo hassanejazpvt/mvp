@@ -6,7 +6,7 @@ const moment = require('moment')
 
 exports.index = async (req, res) => {
     try {
-        let groups = await Group.find({})
+        let groups = await Group.find({"user_id": req.user.user_id})
 
         return res.status(STATUS_CODES.OK).json({
             status: true,

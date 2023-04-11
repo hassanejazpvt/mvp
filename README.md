@@ -1,10 +1,11 @@
 ## Node Version: `v14`
 ---
 ## API Docs
+**Authorization Header Name:** `X-Access-Token`
 
 **Endpoint:** `POST /api/register`
 **Description:**
--- Register a user into the system
+-- Register a user into the system --
 **Payload:**
 ```json
 {
@@ -16,7 +17,7 @@
 
 **Endpoint:** `POST /api/login`
 **Description:**
--- Login to a user in the system
+-- Login to a user in the system --
 **Payload:**
 ```json
 {
@@ -28,11 +29,11 @@
 
 **Endpoint:** `GET /api/groups`
 **Description:**
--- Get all groups
+-- Get all groups for the current user --
 
 **Endpoint:** `POST /api/groups`
 **Description:**
--- Create group
+-- Create group for the current user --
 **Payload:**
 ```json
 {
@@ -43,7 +44,7 @@
 
 **Endpoint:** `PUT /api/groups/:id`
 **Description:**
--- Update group
+-- Update group --
 **Payload:**
 ```json
 {
@@ -54,4 +55,4 @@
 
 **Endpoint:** `DELETE /api/groups/:id`
 **Description:**
--- Delete group
+-- Delete group --
