@@ -2,7 +2,6 @@ require("dotenv").config();
 require("./app/config/database").connect();
 const cors = require('cors')
 const express = require("express");
-const auth = require("./app/middleware/auth");
 
 const app = express();
 
@@ -11,10 +10,10 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-require('./app/routes/auth.routes')(app)
+// load uploaded files
+app.use('/uploads', express.static(__dirname + '/uploads'));
 
-app.get("/welcome", auth, (req, res) => {
-    res.status(200).send("Welcome 🙌 ");
-})
+require('./app/routes/auth.routes')(app)
+require('./app/routes/group.routes')(app)
 
 module.exports = app;

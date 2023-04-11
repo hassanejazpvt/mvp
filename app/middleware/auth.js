@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const STATUS_CODES = require('../helpers/status_codes.helper')
 
 const config = process.env;
 
@@ -7,7 +8,7 @@ const verifyToken = (req, res, next) => {
         req.body.token || req.query.token || req.headers["x-access-token"];
 
     if (!token) {
-        return res.status(403).json({
+        return res.status(STATUS_CODES.FORBIDDEN).json({
             status: false,
             message: "A token is required for authentication",
             errors: []
@@ -17,7 +18,7 @@ const verifyToken = (req, res, next) => {
         const decoded = jwt.verify(token, config.TOKEN_KEY);
         req.user = decoded;
     } catch (err) {
-        return res.status(401).json({
+        return res.status(STATUS_CODES.UNAUTHORIZED).json({
             status: false,
             message: "Invalid Token",
             errors: []

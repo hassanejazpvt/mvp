@@ -60,7 +60,11 @@ exports.register = async (req, res) => {
         user.token = token;
 
         // return new user
-        res.status(STATUS_CODES.CREATED).json(user);
+        return res.status(STATUS_CODES.CREATED).json({
+            status: true,
+            message: "User created successfully.",
+            data: user
+        });
     } catch (error) {
         return res.status(STATUS_CODES.INTERNAL_SERVER_ERROR).json({
             status: false,
@@ -106,7 +110,11 @@ exports.login = async (req, res) => {
             user.token = token;
 
             // user
-            return res.status(STATUS_CODES.OK).json(user);
+            return res.status(STATUS_CODES.OK).json({
+                status: true,
+                message: "Login successful.",
+                data: user
+            });
         }
         return res.status(STATUS_CODES.UNAUTHORIZED).json({
             status: false,
