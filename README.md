@@ -86,3 +86,45 @@
 **Endpoint:** `DELETE /api/companies/:id`
 **Description:**
 -- Delete company --
+
+**Endpoint:** `GET /api/groups/:group_id/contacts`
+**Description:**
+-- Get all contacts for a group --
+
+**Endpoint:** `POST /api/groups/:group_id/contacts`
+**Description:**
+-- Create contact for a group --
+**Payload:**
+```json
+{
+	"name": "John Doe",
+	"image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHgAeAMBIgACEQEDEQH/xAAbAAEAAwEBAQEAAAAAAAAAAAAAAQIFBAMGB//EADAQAAIBAgMFBwMFAQAAAAAAAAABAgMEBRExEiEiQVETMnFygbHBJDNhIzRCUoIU/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAMAwEAAhEDEQA/AP1wAFQAAAAAAAAAAAANgQypLIAhsEMAeoAAAAAeF1dU7Zcbzk9IrUXtyrajtbnN7opmDOTnJyk25Pe29WB2VcTrzf6ajTXhmzx/7brXtpHOBg7qWJ14tdpszXhkaVtdUrlcDalzi9T58mMpQkpRbUlo0MH0zZVnPZ3KuaW0901ukj3AhkNhkMCGwQ2AOgAAACVqBhYnVdS7kuUOFfJyHpXedeo3rtv3PMoAAAQySrYHVhtXs7uKek+F/BtnzlBtV6eWu0vc+iZBDZVsllGwDYKsAdgAAAADAv6fZ3dRcm9pepzm1ids61NTgs5w6c0YogAEMoggEAdFjB1LumuSe0/Q3Gzjw23dGm5zXHPl0R1MgNlGyWVbAhgrJgDQAAAAkCDgvcPjWk6lFqM3qnoz1ur+lQbiuOa5R5eLM2pidxKWcdmK/rlmB4VqFWi2qlOUfzluPD1NSni/KrSfjFl3idvl3J5+VFGZSoVa326cpLrluNK0sI0mp1XtTWiWiPKri2f26T/0znjidxGWcnGS6NEGy3vKHNb31Ku9nuT6N6nQwIbKthso2AbBVsAagAAGbiV64t0aLyekpLl+Edd7W7C3lNd7SPifPt82wIIYbIKBAbIAjMhhkMCGaNheuTVGq83/ABk/YzWyrfQD6JvMo2eVrW7ehGb72kvEuyA2QQwBsABsDKxqfFSp/hsy2d+MP6qPkXuzgYgggEMoMhsNlQDZVslsowDKslsq2B34VPiqU+uUkd7Zl4W/qJeT5NNsgNggAbTKgAY2Mfuo+T5OAAQVZABRUhsACrZVsACrKgAdWGP6iXlNQAggkAD/2Q==",
+	"company_id": "6435c99074190696cde1851d",
+	"email": "test@test.com",
+	"location": "test",
+	"status": "Active",
+	"job": "CTO",
+	"phone": "0123456780"
+}
+```
+
+**Endpoint:** `PUT /api/groups/:group_id/contacts/:id`
+**Description:**
+-- Update contact for a group --
+**Payload:**
+```json
+{
+	"name": "John Doe",
+	"image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHgAeAMBIgACEQEDEQH/xAAbAAEAAwEBAQEAAAAAAAAAAAAAAQIFBAMGB//EADAQAAIBAgMFBwMFAQAAAAAAAAABAgMEBRExEiEiQVETMnFygbHBJDNhIzRCUoIU/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAMAwEAAhEDEQA/AP1wAFQAAAAAAAAAAAANgQypLIAhsEMAeoAAAAAeF1dU7Zcbzk9IrUXtyrajtbnN7opmDOTnJyk25Pe29WB2VcTrzf6ajTXhmzx/7brXtpHOBg7qWJ14tdpszXhkaVtdUrlcDalzi9T58mMpQkpRbUlo0MH0zZVnPZ3KuaW0901ukj3AhkNhkMCGwQ2AOgAAACVqBhYnVdS7kuUOFfJyHpXedeo3rtv3PMoAAAQySrYHVhtXs7uKek+F/BtnzlBtV6eWu0vc+iZBDZVsllGwDYKsAdgAAAADAv6fZ3dRcm9pepzm1ids61NTgs5w6c0YogAEMoggEAdFjB1LumuSe0/Q3Gzjw23dGm5zXHPl0R1MgNlGyWVbAhgrJgDQAAAAkCDgvcPjWk6lFqM3qnoz1ur+lQbiuOa5R5eLM2pidxKWcdmK/rlmB4VqFWi2qlOUfzluPD1NSni/KrSfjFl3idvl3J5+VFGZSoVa326cpLrluNK0sI0mp1XtTWiWiPKri2f26T/0znjidxGWcnGS6NEGy3vKHNb31Ku9nuT6N6nQwIbKthso2AbBVsAagAAGbiV64t0aLyekpLl+Edd7W7C3lNd7SPifPt82wIIYbIKBAbIAjMhhkMCGaNheuTVGq83/ABk/YzWyrfQD6JvMo2eVrW7ehGb72kvEuyA2QQwBsABsDKxqfFSp/hsy2d+MP6qPkXuzgYgggEMoMhsNlQDZVslsowDKslsq2B34VPiqU+uUkd7Zl4W/qJeT5NNsgNggAbTKgAY2Mfuo+T5OAAQVZABRUhsACrZVsACrKgAdWGP6iXlNQAggkAD/2Q==",
+	"company_id": "6435c99074190696cde1851d",
+	"email": "test@test.com",
+	"location": "test",
+	"status": "Active",
+	"job": "CTO",
+	"phone": "0123456780"
+}
+```
+
+**Endpoint:** `DELETE /api/groups/:group_id/contacts/:id`
+**Description:**
+-- Delete contact for a group --
