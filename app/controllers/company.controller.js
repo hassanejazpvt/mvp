@@ -1,16 +1,16 @@
-const Group = require("../models/group.model");
+const Company = require("../models/company.model");
 const STATUS_CODES = require('../helpers/status_codes.helper')
 const base64Img = require('base64-img')
 const moment = require('moment')
 
 exports.index = async (req, res) => {
     try {
-        let groups = await Group.find({"user_id": req.user.user_id})
+        let companies = await Company.find({})
 
         return res.status(STATUS_CODES.OK).json({
             status: true,
-            message: "Groups list successfully.",
-            data: groups
+            message: "Companies list successfully.",
+            data: companies
         });
     } catch (error) {
         return res.status(STATUS_CODES.INTERNAL_SERVER_ERROR).json({
@@ -40,18 +40,17 @@ exports.store = async (req, res) => {
             })
         }
 
-        icon = base64Img.imgSync(icon, 'uploads/groups', moment.now())
+        icon = base64Img.imgSync(icon, 'uploads/companies', moment.now())
 
-        let group = await Group.create({
-            user_id: req.user.user_id,
+        let company = await Company.create({
             name,
             icon
         })
 
         return res.status(STATUS_CODES.OK).json({
             status: true,
-            message: "Group created successfully.",
-            data: group
+            message: "Company created successfully.",
+            data: company
         });
     } catch (error) {
         return res.status(STATUS_CODES.INTERNAL_SERVER_ERROR).json({
@@ -68,10 +67,10 @@ exports.update = async (req, res) => {
 
         let { name, icon } = req.body
 
-        if (!await Group.exists({"_id": id})) {
+        if (!await Company.exists({"_id": id})) {
             return res.status(STATUS_CODES.NOT_FOUND).json({
                 status: false,
-                message: "Group not found."
+                message: "Company not found."
             })
         }
 
@@ -80,15 +79,15 @@ exports.update = async (req, res) => {
             data.name = name
         }
         if (icon) {
-            data.icon = base64Img.imgSync(icon, 'uploads/groups', moment.now())
+            data.icon = base64Img.imgSync(icon, 'uploads/companies', moment.now())
         }
 
-        let group = await Group.findByIdAndUpdate(id, data, { new: true })
+        let company = await Company.findByIdAndUpdate(id, data, { new: true })
 
         return res.status(STATUS_CODES.OK).json({
             status: true,
-            message: "Group updated successfully.",
-            data: group
+            message: "Company updated successfully.",
+            data: company
         })
     } catch (error) {
         return res.status(STATUS_CODES.INTERNAL_SERVER_ERROR).json({
@@ -102,17 +101,17 @@ exports.update = async (req, res) => {
 exports.destroy = async (req, res) => {
     try {
         const { id } = req.params
-        let group = await Group.findById(id)
-        if (group) {
-            group.deleteOne()
+        let company = await Company.findById(id)
+        if (company) {
+            company.deleteOne()
             return res.status(STATUS_CODES.OK).json({
                 status: true,
-                message: "Group deleted successfully."
+                message: "Company deleted successfully."
             })
         }
         return res.status(STATUS_CODES.NOT_FOUND).json({
             status: false,
-            message: "Group not found."
+            message: "Company not found."
         })
     } catch (error) {
         return res.status(STATUS_CODES.INTERNAL_SERVER_ERROR).json({

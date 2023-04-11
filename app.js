@@ -15,5 +15,6 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 
 require('./app/routes/auth.routes')(app)
 require('./app/routes/group.routes')(app)
+require('./app/routes/company.routes')(app)
 
 module.exports = app;
