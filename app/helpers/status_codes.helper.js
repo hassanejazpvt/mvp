@@ -1,0 +1,8 @@
+module.exports = {
+    OK: 200,
+    CREATED: 201,
+    UNAUTHORIZED: 401,
+    CONFLICT: 409,
+    UNPROCESSABLE_CONTENT: 422,
+    INTERNAL_SERVER_ERROR: 500,
+}
