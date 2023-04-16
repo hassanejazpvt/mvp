@@ -128,3 +128,45 @@
 **Endpoint:** `DELETE /api/groups/:group_id/contacts/:id`
 **Description:**
 -- Delete contact for a group --
+
+**Endpoint:** `GET /api/contacts/:contact_id/comments`
+**Description:**
+-- Get all comments for a contact --
+
+**Endpoint:** `POST /api/contacts/:contact_id/comments`
+**Description:**
+-- Create comment for a contact --
+**Payload:**
+```json
+{
+	"comment": "This is a comment"
+}
+```
+
+**Endpoint:** `PUT /api/contacts/:contact_id/comments/:id`
+**Description:**
+-- Update comment for a contact --
+**Payload:**
+```json
+{
+	"comment": "This is an edited comment"
+}
+```
+
+**Endpoint:** `DELETE /api/contacts/:contact_id/comments/:id`
+**Description:**
+-- Delete comment for a contact --
+
+**Endpoint:** `GET /api/settings`
+**Description:**
+-- Get settings for a user --
+
+**Endpoint:** `POST /api/settings`
+**Description:**
+-- Create settings for a user --
+**Payload:**
+```json
+{
+	"sidebar_heading": "Contact"
+}
+```

@@ -18,5 +18,6 @@ require('./app/routes/group.routes')(app)
 require('./app/routes/company.routes')(app)
 require('./app/routes/contact.routes')(app)
 require('./app/routes/comment.routes')(app)
+require('./app/routes/setting.routes')(app)
 
 module.exports = app;
