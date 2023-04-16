@@ -157,6 +157,40 @@
 **Description:**
 -- Delete comment for a contact --
 
+**Endpoint:** `GET /api/contacts/:contact_id/interactions`
+**Description:**
+-- Get all interactions for a contact --
+
+**Endpoint:** `POST /api/contacts/:contact_id/interactions`
+**Description:**
+-- Create interaction for a contact --
+**Payload:**
+```json
+{
+	"name": "Dev",
+	"date": "2022-12-12",
+	"location": "London",
+	"description": "This is a description"
+}
+```
+
+**Endpoint:** `PUT /api/contacts/:contact_id/interactions/:id`
+**Description:**
+-- Update interaction for a contact --
+**Payload:**
+```json
+{
+	"name": "Dev edited",
+	"date": "2022-12-12",
+	"location": "London",
+	"description": "This is a description"
+}
+```
+
+**Endpoint:** `DELETE /api/contacts/:contact_id/interactions/:id`
+**Description:**
+-- Delete interaction for a contact --
+
 **Endpoint:** `GET /api/settings`
 **Description:**
 -- Get settings for a user --
