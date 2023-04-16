@@ -17,5 +17,6 @@ require('./app/routes/auth.routes')(app)
 require('./app/routes/group.routes')(app)
 require('./app/routes/company.routes')(app)
 require('./app/routes/contact.routes')(app)
+require('./app/routes/comment.routes')(app)
 
 module.exports = app;
